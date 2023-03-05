@@ -1,8 +1,5 @@
-# Eurorack-Modular
-My collection of Modular modules
-
-
-Module 3 - CV GATE SEQUENCER - this is my version of Hagiwo's CV GATE SEQUENCER.  I modified his code and schematic.  I added 2 Gate outputs, 2 Trigger outputs.  I changed the encoder resolution from 4 to 2.  Added a buffer for the Gate and Trigger outputs.
+# Module 3 - CV GATE SEQUENCER
+This is my version of Hagiwo's CV GATE SEQUENCER.  I modified his code and schematic.  I added 2 Gate outputs, 2 Trigger outputs.  I changed the encoder resolution from 4 to 2.  Added a buffer for the Gate and Trigger outputs.
 
 The original code is at;
 https://note.com/solder_state/n/n7c2809976698
