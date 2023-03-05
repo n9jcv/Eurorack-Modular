@@ -394,10 +394,10 @@ if ( (newPosition - 3) / 4  > oldPosition / 4) { // divide by rotary encoder res
 
  //--------------------CV out---------------------
  if (DAC_switch == 1) {
-  //LOOKS LIKE HAGIWO BUG  IS THIS CAUSING NOTE TO PLAY EVEN WHEN YOU SELECT GATE OFF FOR NOTE ???
-  ////   ORIG CODE    DAC_switch = 1;
-  ///  I THINK HE INTENDED TO RESET TO ZERO LIKE THIS
-  //     ******    NEED TO TEST **************
+  //LOOKS LIKE HAGIWO BUG  IS THIS CAUSING NOTE TO PLAY EVEN WHEN YOU SELECT GATE OFF FOR NOTE
+  //I MODIFIED THE CODE SO THAT THE DAC DOES NOT OUTPUT A NOTE IF YOU TURN THE STEP OFF
+  //PERHAPS HAGIWO WANTED THE DAC OUTPUT, BUT FOR ME IT DID NOT MAKE SENSE  CODE MODIFIED ABOVE AND 
+  //HERE TO ACCOMPLISH THAT
 //   DAC_switch = 0;
    switch (step_select_fix) {
      case 0:
