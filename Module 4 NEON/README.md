@@ -13,3 +13,5 @@ This is my version of Random Sequencer/Turing machine.  It is all my own custom 
 *   There are 11 LEDs.  The yellow LED in the center is a the Gate LED, and this is lit whenever the gate out is generated.  The 10 other LEDs in a circle are just selected/lit each time a new step is played.  Currently this only happens when Gate out is actually patched to another module.
 
 Schematic and code are available and free for everyone to use. The Schematic does NOT include the cd4017. I purchased a small smd board with the 4017 and a 555 and 10 LEDs, like 50 cents from China. I only soldered the 4017 and the LEDs, I did not use the 555. Instead, I use the D3 output to drive pin 3 of the 555 pad on the board. This triggers the 4017 in sync with the gate.
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/a958f1cf84cec4a42224d195a96eccc0b7e18278ec218b22.jpg)
