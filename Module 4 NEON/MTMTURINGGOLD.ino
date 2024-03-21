@@ -62,7 +62,7 @@ Adafruit_MCP4725 dac;
 bool clk_in = 0;
 bool old_clk_in = 0;
 int sequence[32]; //step array
-int gatearray[32]; //array of gates
+
 int count = 0; //number of steps
 int randnum = 0;
 int randnum2 = 0;
@@ -120,18 +120,18 @@ void setup() {
 void loop() {
 do {
   //read clock in
-  clk_in = digitalRead(4);
+  clk_in = digitalRead(9);
   if (clk_in == 1 && old_clk_in == 0) {
-      dac.setVoltage(sequence[count], false); //Output CV
+      //dac.setVoltage(sequence[count], false); //Output CV
       stepsLength(); //determine steps length  SETS VALUE OF STEPS
       octavecheck(); //determine octave range for random CV   SETS VALUE OF OCTAVESIZE
       //CHECK FOR SHIFTING RANGE AFTER NUMBER OF OCTAVES IS SET 
-      updowncheck();  SETS VALUE OF SHIFT
+      updowncheck();  //SETS VALUE OF SHIFT
       //Serial.println(shift);
       GetRandomCV(); //change voltage of step depending on the cv pot  SETS VALUE OF RANDNUM
       display.showNumberDec(count+1,false, 2, 2); //DISPLAY CURRENT STEP NUMBER RIGHT 2 POSITIONS
       display.showNumberDec(octavesize,false, 1, 0); //DISPLAY OCTAVE SETTING LEFT 1 POSITION
-     
+      dac.setVoltage(sequence[count], false); //Output CV
       //if RANDGATESW is HIGH then generate random gate
       //ELSE IF LOW then always generate a gate
       if (digitalRead(RANDGATESW) == LOW) {
@@ -140,7 +140,7 @@ do {
       }
       else if (digitalRead(RANDGATESW) == HIGH) {
               RandomGate(); 
-              if (gatearray[count] == 1) {
+              if (randnum2 == 1) {
                   digitalWrite(GATELED, HIGH);
                   digitalWrite(GATEOUT, HIGH);
               }
@@ -150,7 +150,6 @@ do {
   else if (clk_in == 0 && old_clk_in == 1){
            digitalWrite(GATELED, LOW);
            digitalWrite(GATEOUT, LOW);
-           //Serial.println("GATE OFF");
            count ++;
            old_clk_in = 0;
        }
@@ -160,8 +159,8 @@ do {
 
 static bool getRandomBool(int probability) {
   //returns true or false based on the probability
-  //randVal starts from 10 to help keep the pot at 0 when it is fully ccw and ends at 1013
-  int randVal = random(10, 1013);
+  //randVal starts from 20 to help keep the pot at 0 when it is fully ccw
+  int randVal = random(20, 1023);
   return randVal <= probability;
 }
 
@@ -171,7 +170,6 @@ static void GetRandomCV() {
   //centering in the range
   //example 5 octaves 0 to 4095
   // 1 octave is centered 1637 to 2457
-
   if (octavesize == 1) {
     randnum = random(1637, 2457);
   }
@@ -233,7 +231,7 @@ static void GetRandomCV() {
       randnum = randnum + 817;
   } 
   else {
-    //shift down 0 octaves
+    //NO SHIFT
       display.setSegments(ZEROSEG, 1, 1);
   }
   
@@ -244,13 +242,12 @@ static void GetRandomCV() {
     //THE MAP SETS CVVAL TO ONE OF THOSE 61 VALUES
     cvval = map(randnum, 0, 4096, 0, 61);
     sequence[count] = cv_quant[cvval];
-  }
+   }
 }
 
 static void RandomGate() {
   //generate random number from 0 to 1
   randnum2 = random(2);
-  gatearray[count] = randnum2;
 }
 
 static void stepsLength() {
