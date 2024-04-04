@@ -14,5 +14,5 @@ This is my version of Random Sequencer/Turing machine.  It is all my own custom
 
 Schematic and code are available and free for everyone to use. The Schematic does NOT include the cd4017. I purchased a small smd board with the 4017 and a 555 and 10 LEDs, like 50 cents from China. I only soldered the 4017 and the LEDs, I did not use the 555. Instead, I use the D3 output to drive pin 3 of the 555 pad on the board. This triggers the 4017 in sync with the gate.
 
+![myimage-alt-tag](https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%204%20NEON/Neon%20Module.jpg?raw=true)
 
-https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%204%20NEON/Neon%20Module.jpg?raw=true
