@@ -9,6 +9,9 @@ The design will require a RP2040.  I am running it on a Seeed Studio Xiao RP2040
 
 I made many changes and customizations to the original code and hardware design.  Please feel free to use this anyway you like.  Here is a list of the functionality as it works with my changes today.
 
+Link to youtube demo that explains everything;
+https://www.youtube.com/watch?v=iEMPPeQwQ0A
+
 - I added a OLED display.  The SSD1306.  Cheap and looks good.
 - I added a 6 step sequencer to the functionality.
 - I added a 2 stage buffer output, with a Gain control.  TL072 based.
