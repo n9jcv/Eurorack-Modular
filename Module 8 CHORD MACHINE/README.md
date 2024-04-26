@@ -30,10 +30,6 @@ Wave:  Select the desired waveform here (Sawtooth, Sine, Tri, Square, Octave Saw
 
 Chord:  Select the chord family here (Major 1, 2, 3, 4, Minor 1, 2)
 
-Chord Machine Module picture:
-
-![myimage-alt-tag](https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%204%20NEON/Neon%20Module.jpg?raw=true)
-
 Schematic Picture:
 
 ![CHORD SCHEMATIC](https://github.com/n9jcv/Eurorack-Modular/assets/6472203/93fbe238-7680-4383-93ee-74aaa54347b4)
