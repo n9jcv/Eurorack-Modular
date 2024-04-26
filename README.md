@@ -26,3 +26,14 @@ It seems to me that the original code had a defect, but maybe Hagiwo intended it
 This is my version of a Random Sequencer/Turing Machine.  It is based on a Arduino Nano.  It uses a MCP4725 I2S DAC.  I also included 10 LEDs driven by a CD4017 for visual effects.
 
 I did notice a minor defect, but it seems to work in my favor.  Pin D3 is used to drive the CD4017, which controls the 10 LEDs in a circle.  The triggering of the CD4017 only seems to happen when I patch the Gate out cable to another module (AR for example).  If the Gate out is not used, the LEDs do not trigger.  Which actually, I think is kind of cool.  As if there is no motion, you are not currently using the Gate out.  I have a feeling it is a noise/grounding issue.  Perhaps, If I were to run the output of D3 thru a Op Amp buffer stage, it would solve the issue, but for me I am happy to leave as is.
+
+## Module 8 - CHORD MACHINE
+
+This is my version of Hagiwo's RP2040 Chord module.  The original design can be found here;
+
+[http://https://note.com/solder_state/n/n64b91a171218](http://https://note.com/solder_state/n/n64b91a171218)
+Thanks to Hagiwo for sharing!!
+
+The design will require a RP2040.  I am running it on a Seeed Studio Xiao RP2040, but it would likely run on any RP2040, just ensure you change pin numbers as necessary.
+
+I made many changes and customizations to the original code and hardware design.  Please feel free to use this anyway you like.  
