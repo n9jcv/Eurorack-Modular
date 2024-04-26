@@ -35,4 +35,5 @@ Chord Machine Module picture:
 ![myimage-alt-tag](https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%204%20NEON/Neon%20Module.jpg?raw=true)
 
 Schematic Picture:
-![myimage-alt-tag](https://https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%208%20CHORD%20MACHINE/CHORD%20SCHEMATIC.jpg?raw=true)
+
+![CHORD SCHEMATIC](https://github.com/n9jcv/Eurorack-Modular/assets/6472203/93fbe238-7680-4383-93ee-74aaa54347b4)
