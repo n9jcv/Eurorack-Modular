@@ -29,3 +29,10 @@ Source:  You can select CV, and then send a cv note in and the quantizer will qu
 Wave:  Select the desired waveform here (Sawtooth, Sine, Tri, Square, Octave Saw, FM1, FM2, FM3)
 
 Chord:  Select the chord family here (Major 1, 2, 3, 4, Minor 1, 2)
+
+Chord Machine Module picture:
+
+![myimage-alt-tag](https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%204%20NEON/Neon%20Module.jpg?raw=true)
+
+Schematic Picture:
+![myimage-alt-tag](https://https://github.com/n9jcv/Eurorack-Modular/blob/main/Module%208%20CHORD%20MACHINE/CHORD%20SCHEMATIC.jpg?raw=true)
