@@ -343,7 +343,7 @@ void loop()
   //READ AND PROCESS CLOCK IN - ONLY QUANTIZE NOTE ON NEW RISING CLOCK AND NOT AGAIN UNTIL A NEW RISING CLOCK  
   newclock = digitalRead(0);  
   if ((newclock == 1) and (oldclock == 0)){                  
-      oldclock = newclock;
+      //oldclock = newclock;
       if (source == 0){//IF SOURCE IS CV READ CV IN VALUE P26
         cvin = analogRead(26); 
         qnt_set();              
@@ -351,13 +351,16 @@ void loop()
       else if (source == 1){//IF SOURCE IS INTERNAL THEN SELECT NOTE 1 TO 6 AND CYLCLE THRU WITH CLOCK
               getnote();
               qnt_set();
-              drawline();
+              //COMMENTED OUT   THIS DRAWLINE/SCREEN REFRESH TAKES 33ms AND THIS CAUSES CHIRP WITH INTERNAL NOTE 
+              //DUE TO DELAY CAUSE BY MEMORY DUMP TO SCREEN   MOVED FURTHER BELOW TO AVOID
+              //  drawline();             
       }      
   }
+  
   if ((newclock == 0) and (oldclock == 1)){
       oldclock = newclock;
-
   }
+
 
   //SOUND PROCESSING
   if (prevwaveform != waveform){
@@ -382,6 +385,14 @@ void loop()
     osc_scale_rate[3]=freq_rate[chord_4[select_chord4[select_table][thr%6]][3]]*osc_inverse[3];
   };
 
+//THIS WAS MOVED FROM ABOVE BECAUSE OF A RESOURCE BLOCKING  CAUSING CHIRPING WHEN INTERNAL AND CHANGING CHORD
+  if ((newclock == 1) and (oldclock == 0)){                  
+      oldclock = newclock;
+      if (source == 1){//IF SOURCE IS CV READ CV IN VALUE P26
+        drawline();             
+      }
+  }
+
  if (old_pushsw == 0 && pushsw == 1) {
    pushcnt = 0;
  }
@@ -405,7 +416,7 @@ void getnote(){
   }    
 }
 
-void drawline(){//DRAWS LINE UNDER NOT PLAYING WHEN SOURCE IS INTERNAL
+void drawline(){//DRAWS LINE UNDER NOTE PLAYING WHEN SOURCE IS INTERNAL
   //xst, yst, xen, yen
   display.drawLine(0, 27, 126, 27, BLACK);
   display.drawLine(11+(notecnt*18), 27, 22+(notecnt*18), 27, WHITE);
